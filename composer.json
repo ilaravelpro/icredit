@@ -1,0 +1,36 @@
+{
+    "name": "ilaravelpro/icredit",
+    "description": "iLaravel iCredit",
+    "keywords": ["laravel","auto pro", "charge", "register", "verify"],
+    "homepage": "https://ilaravel.iamir.net/packages/icredit",
+    "license": "MIT",
+    "authors": [
+        {
+            "name" : "iamirnet",
+            "email" : "me@iamir.net",
+            "homepage": "https://iamir.net",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "src"
+        ],
+        "psr-4": {
+            "iLaravel\\iCredit\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "iLaravel\\iCredit\\Providers\\AppServiceProvider",
+                "iLaravel\\iCredit\\Providers\\RouteServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
