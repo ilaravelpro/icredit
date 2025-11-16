@@ -20,12 +20,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('credit_changes', function (Blueprint $table) {
+        Schema::smartCreate('credit_changes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('creator_id')->nullable()->unsigned();
-            $table->foreign('creator_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('creator_id')->references('id')->on('users')->noActionOnDelete();
             $table->bigInteger('credit_id')->nullable()->unsigned();
-            $table->foreign('credit_id')->references('id')->on('credits')->onDelete('cascade');
+            $table->foreign('credit_id')->references('id')->on('credits')->noActionOnDelete();
             $table->string('number')->nullable();
             $table->string('modal')->nullable();
             $table->bigInteger('modal_id')->nullable();
